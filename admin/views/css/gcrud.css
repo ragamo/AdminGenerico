@@ -1,0 +1,44 @@
+/* GroceryCrud Fixes */
+div.flexigrid div.mDiv,
+div.flexigrid div.mDiv div.ptogtitle {
+	display: none;
+}
+div.flexigrid.crud-form div.mDiv {
+	display: block;
+}
+div.flexigrid div.tDiv {
+	margin: 0 0 10px 0;
+	border: 1px solid #CCC;
+}
+div.flexigrid a {
+	color: #444 !important;
+	text-shadow:0 1px 0 #FFF;
+}
+div.flexigrid div.pDiv2 select {
+	padding: 2px;
+	width: auto;
+	height: auto;
+}
+div.flexigrid div.pDiv2 input {
+	padding: 2px;
+	top: -8px;
+	width: auto;
+	height: auto;
+}
+
+div.flexigrid .bDiv table tr td {
+	border-bottom: 1px solid #CCC;
+}
+div.flexigrid tr.erow td {
+	background: #eaeaea;
+}
+div.flexigrid .gridImagePrev,
+div.flexigrid .editImagePrev {
+	max-width: 200px;
+	max-height: 200px;
+}
+.report-div.success {
+	background: #DFF0D8;
+	border-radius: 4px;
+	color: #468847;
+}

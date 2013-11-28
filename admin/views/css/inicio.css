@@ -1,0 +1,34 @@
+/* Dashboard */
+.dashboard .span4 {
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+    border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    padding: 19px 29px 29px;
+
+    transition:border .5s, background-color .5s;
+    cursor: pointer;
+}
+.dashboard .span4:hover {
+	border: 1px solid #999;
+	background-color: #EAEAEA;
+}
+.dashboard .span4 * {
+	text-align: center;
+}
+.dashboard .span4 h1 {
+	margin-bottom: 0;
+}
+.dashboard .graph {
+	margin: 30px 0 0 0;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 29px;
+}
