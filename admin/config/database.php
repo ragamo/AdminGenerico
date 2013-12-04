@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'flocsflh_dev';
-$db['default']['password'] = 'c{Be%RB$KuTW';
-$db['default']['database'] = 'flocsflh_devpy';
+$db['default']['username'] = 'username';
+$db['default']['password'] = 'password';
+$db['default']['database'] = 'database';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
