@@ -16,8 +16,7 @@ require_once BASEPATH.'libraries/Smarty-3.0.8/libs/Smarty.class.php';
 
 class CI_Smarty extends Smarty {
 
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
 
         // Store the Codeigniter super global instance... whatever
@@ -39,8 +38,7 @@ class CI_Smarty extends Smarty {
         // Add all helpers to plugins_dir
         $helpers = glob(APPPATH . 'helpers/', GLOB_ONLYDIR | GLOB_MARK);
 
-        foreach ($helpers as $helper)
-        {
+        foreach ($helpers as $helper) {
             $this->plugins_dir[] = $helper;
         }
         
@@ -48,33 +46,27 @@ class CI_Smarty extends Smarty {
         $this->assign("this", $CI);
     }
     
-	
-	public function view($template, $data = array(), $return = FALSE){
-		
-		$data['BASE_URL']  = BASE_URL;
-		$data['FULL_PATH'] = FULL_PATH;
-		$data['FB_API_KEY'] = FB_API_KEY;
-	
-		foreach ($data as $key => $val) {
-			$this->assign($key, $val);
-		}
-		
-		if ($return == FALSE){
-			$CI =& get_instance();
-			$CI->output->set_output($this->fetch($template));
-			return;
-			
-		} else {
-			return $this->fetch($template);
-		}
-	}
+    
+    public function view($template, $data = array(), $return = FALSE){
+        $data['BASE_URL']  = BASE_URL;
+        $data['FULL_PATH'] = FULL_PATH;
+        $data['FB_API_KEY'] = FB_API_KEY;
+    
+        foreach ($data as $key => $val) {
+            $this->assign($key, $val);
+        }
+        
+        if ($return == FALSE){
+            $CI =& get_instance();
+            $CI->output->set_output($this->fetch($template));
+            return;
+            
+        } else {
+            return $this->fetch($template);
+        }
+    }
 
     public function render($template, $data = array(), $return = FALSE) {
-        $data['BASE_URL']  = $x['BASE_URL']  = BASE_URL;
-        $data['FULL_PATH'] = $x['FULL_PATH'] = FULL_PATH;
-        $data['FB_API_KEY'] = $x['FB_API_KEY'] = FB_API_KEY;
-        
-        //$x['SECCION'] = $data['SECCION'];
         $x['CONTENIDO'] = $this->view($template, $data, TRUE);
         return $this->view("includes/template.tpl", $x, $return);
     }
