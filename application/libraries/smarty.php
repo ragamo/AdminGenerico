@@ -29,6 +29,8 @@ class CI_Smarty extends Smarty {
         $this->cache_dir         = config_item('cache_directory');
         $this->config_dir        = config_item('config_directory');
         $this->template_ext      = config_item('template_ext');
+        $this->caching           = config_item('cache');
+        $this->cache_lifetime    = config_item('cache_lifetime');
         $this->exception_handler = null;
         
         // Only show serious errors. Without this if you try and use variables that
@@ -68,7 +70,7 @@ class CI_Smarty extends Smarty {
 
     public function render($template, $data = array(), $return = FALSE) {
         $x['CONTENIDO'] = $this->view($template, $data, TRUE);
-        return $this->view("includes/template.tpl", $x, $return);
+        return $this->view("inc/template.tpl", $x, $return);
     }
 
 }

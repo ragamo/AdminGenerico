@@ -16,7 +16,9 @@ $config['template_directory']   = APPPATH."views/";
 // Where templates are compiled
 $config['compile_directory']    = APPPATH."cache/smarty/compiled";
 
-// Where templates are cached
+// Cache
+$config['cache']				= false;
+$config['cache_lifetime']		= 3600;
 $config['cache_directory']      = APPPATH."cache/smarty/cached";
 
 // Where Smarty configs are located
@@ -26,4 +28,5 @@ $config['config_directory']     = APPPATH."third_party/Smarty/configs";
 $config['template_ext']         = 'tpl';
 
 // PHP error reporting level (can be any valid error reporting level)
-$config['error_reporting'] = "E_ALL";
+$config['error_reporting'] 		= "E_ALL";
+
