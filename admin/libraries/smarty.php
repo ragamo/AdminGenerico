@@ -51,31 +51,29 @@ class CI_Smarty extends Smarty {
     
 	
 	public function view($template, $data = array(), $return = FALSE){
-		$data['BASE_URL']  = BASE_URL;
-		$data['FULL_PATH'] = FULL_PATH;
-	
-		foreach ($data as $key => $val) {
-			$this->assign($key, $val);
-		}
-		
-		if ($return == FALSE){
-			$CI =& get_instance();
-			$CI->output->set_output($this->fetch($template));
-			return;
-			
-		} else {
-			return $this->fetch($template);
-		}
-	}
+        $data['BASE_URL']  = BASE_URL;
+        $data['FULL_PATH'] = FULL_PATH;
+    
+        foreach ($data as $key => $val) {
+            $this->assign($key, $val);
+        }
+        
+        if ($return == FALSE){
+            $CI =& get_instance();
+            $CI->output->set_output($this->fetch($template));
+            return;
+            
+        } else {
+            return $this->fetch($template);
+        }
+    }
 
     public function render($template, $data = array(), $return = FALSE) {
-        $data['BASE_URL']  = $x['BASE_URL']  = BASE_URL;
-        $data['FULL_PATH'] = $x['FULL_PATH'] = FULL_PATH;
-        
         $CI =& get_instance();
+        $CI->load->library('menu');
 
+        $x['MENU'] = $CI->menu->getItems();
         $x['USERNAME'] = $CI->session->userdata('username');
-        $x['URL'] = $_SERVER["REQUEST_URI"];
         $x['CONTENIDO'] = $this->view($template, $data, TRUE);
         return $this->view("inc/template.tpl", $x, $return);
     }
