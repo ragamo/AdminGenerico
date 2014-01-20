@@ -25,13 +25,13 @@
 				<ul class="nav">
 					{foreach $MENU as $i => $item}
 						{if $item.controller}
-						<li {if $item.active}class="active"{/if}><a href="{$BASE_URL}/{$item.controller}"><i class="{$item.icono}"></i> {$i}</a></li>
+						<li {if $item.active}class="active"{/if}><a href="{$BASE_URL}/{$item.controller}/"><i class="{$item.icono}"></i> {$i}</a></li>
 						{elseif $item.submenu}
 							<li class="dropdown {foreach $item.submenu as $submenu}{if $submenu.active}active{/if}{/foreach}">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="{$item.icono}"></i> {$i} <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 								{foreach $item.submenu as $k => $submenu}
-									<li {if $submenu.active}class="active"{/if}><a href="{$BASE_URL}/{$submenu.controller}"><i class="{$submenu.icono}"></i> {$k}</a></li>
+									<li {if $submenu.active}class="active"{/if}><a href="{$BASE_URL}/{$submenu.controller}/"><i class="{$submenu.icono}"></i> {$k}</a></li>
 								{/foreach}
 								</ul>
 							</li>
