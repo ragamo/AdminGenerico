@@ -8,7 +8,7 @@ Paquetes incluidos:
   - Bitly
 - Smarty 3.0.8
 - Modernizr 2.6.3
-- jQuery 1.10.2
+- jQuery 1.11.0
 - Fancybox 2.1.5
 
 
@@ -21,5 +21,5 @@ Paquetes incluidos:
 - Smarty 3.0.8
 - GroceryCRUD 1.4.1
 - ImageCRUD 0.5
-- jQuery 2.0.3
+- jQuery 1.11.0
 - Bootstrap 2.3.2

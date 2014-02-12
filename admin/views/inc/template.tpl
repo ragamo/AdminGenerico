@@ -10,7 +10,7 @@
 	<link href="{$c}" rel="stylesheet">
 	{/foreach}
 
-	<script src="{$FULL_PATH}/js/jquery/jquery-1.10.0.min.js"></script>
+	<script src="{$FULL_PATH}/js/jquery/jquery-1.11.0.min.js"></script>
 	<script src="{$FULL_PATH}/js/bootstrap/bootstrap.min.js"></script>
 	{foreach $js as $j}
 	<script src="{$j}"></script>
