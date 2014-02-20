@@ -25,3 +25,4 @@ Paquetes incluidos:
 - ImageCRUD 0.5
 - jQuery 1.11.0
 - Bootstrap 2.3.2
+  - Bootstrap Datepicker
