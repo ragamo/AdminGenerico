@@ -14,7 +14,7 @@ class Usuarios extends CI_Controller {
 		$this->crud->set_table('usuarios')->set_subject('usuario');
 
 		//Campos a mostrar en la grilla
-		$this->crud->columns('usu_id','usu_user');
+		$this->crud->columns('usu_id','usu_user','usu_permisos');
 
 		//Mapeo de filas y nombres
 		$this->crud->display_as('usu_id','ID')
