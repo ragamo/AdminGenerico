@@ -20,7 +20,8 @@ class Usuarios extends CI_Controller {
 		$this->crud->display_as('usu_id','ID')
 					->display_as('usu_user','Usuario')
 					->display_as('usu_pass','Contraseña')
-					->display_as('usu_activo','Estado');
+					->display_as('usu_activo','Estado')
+					->display_as('usu_permisos','Permisos');
 
 		//Tipo de campos
 		$this->crud->field_type('usu_activo','dropdown', array('0' => 'Inactivo', '1' => 'Activo'))
@@ -28,11 +29,15 @@ class Usuarios extends CI_Controller {
 					->field_type('usu_pass','password');
 
 		//Requeridos
-		$this->crud->required_fields('usu_user','usu_pass','usu_activo');
+		$this->crud->required_fields('usu_user','usu_pass','usu_activo','usu_permisos');
 
-		//
+		//Callbacks
 		$this->crud->callback_before_insert(array($this,'encryptPasswordCallback'));
 		$this->crud->callback_before_update(array($this,'encryptPasswordCallback'));
+
+		//Permisos
+		$this->load->library('menu');
+		$this->crud->field_type('usu_permisos','multiselect', $this->menu->getModulos());
 
 		//Output
 		$output = $this->crud->render();
@@ -45,7 +50,10 @@ class Usuarios extends CI_Controller {
 	}
 
 	public function encryptPasswordCallback($formData, $id = NULL) {
-		$formData['usu_pass'] = md5($formData['usu_pass']);
+		//Si ya es MD5 no hace nada
+		if(!preg_match('/^[a-f0-9]{32}$/', $formData['usu_pass'])) {
+			$formData['usu_pass'] = md5($formData['usu_pass']);
+		}
 		return $formData;
 	}
 

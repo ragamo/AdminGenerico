@@ -4,10 +4,10 @@ class Login_model extends CI_Model {
 
 	public function validar($username = NULL, $password = NULL) {
 		if(!isset($username) || $username == "") {
-			return FALSE;
+			return false;
 		}
 		if(!isset($password) || $password == "") {
-			return FALSE;
+			return false;
 		}
 		
 		$sql = 'SELECT * FROM usuarios 
@@ -16,13 +16,23 @@ class Login_model extends CI_Model {
 				AND usu_activo = "1"';
 
 		$query = $this->db->query($sql);
-		
 		if($query->num_rows() > 0) {
 			$res = $query->result();
 			return $res[0];
 		}
 
-		return FALSE;
+		return false;
+	}
+
+	public function getModulosPorUsuario($idUsuario) {
+		$sql = "SELECT usu_permisos FROM usuarios WHERE usu_id = ".$this->db->escape($idUsuario);
+
+		$query = $this->db->query($sql);
+		if($query->num_rows() > 0) {
+			$res = $query->row_array();
+			return explode(",",$res['usu_permisos']);
+		}
+		return false;
 	}
 
 

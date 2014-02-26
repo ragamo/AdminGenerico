@@ -2,6 +2,11 @@
 
 class Login extends CI_Controller {
 
+	public function __construct() {
+		parent::__construct();
+		$this->load->helper('url');
+	}
+
 	public function index($error = NULL) {
 		$data['error'] = $error;
 		$this->smarty->view('login.tpl', $data);
@@ -9,7 +14,6 @@ class Login extends CI_Controller {
 
 	public function logout(){
 		$this->session->sess_destroy();
-		$this->load->helper('url');
 		redirect(BASE_URL);
 	}
 
@@ -30,8 +34,9 @@ class Login extends CI_Controller {
 			);
 			$this->session->set_userdata($data);
 
-			$this->load->helper('url');
-			redirect(BASE_URL.'/inicio');
+			//Recupera el primer modulo habilitado para el usuario
+			$modulos = $this->login_model->getModulosPorUsuario($data['id']);
+			redirect(BASE_URL.'/'.$modulos[0]);
 			
 		//Usuario invalido. 
 		} else {
