@@ -1,13 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-define('BASE_URL', "http://".$_SERVER['SERVER_NAME']."/dev/lab/py/proyectos/admin.php");
-define('FULL_PATH', "http://".$_SERVER['SERVER_NAME']."/dev/lab/py/proyectos/admin/views");
-
-//Opcional si se usa TinyMCE con uploader de imagenes
-define('TINYMCE_UPLOADS_PATH', $_SERVER['DOCUMENT_ROOT']."dev/lab/py/proyectos/application/uploads");
-define('TINYMCE_FULL_PATH', "http://".$_SERVER['SERVER_NAME']."/dev/lab/py/proyectos/application/uploads");
-
-
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes
