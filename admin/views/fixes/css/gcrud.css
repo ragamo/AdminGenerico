@@ -1,0 +1,112 @@
+/* GroceryCrud Fixes */
+div.flexigrid {
+	font-family: 'Open Sans';
+}
+div.flexigrid div.mDiv,
+div.flexigrid div.mDiv div.ptogtitle {
+	display: none;
+}
+div.flexigrid.crud-form div.mDiv {
+	display: block;
+}
+div.flexigrid div.tDiv {
+	margin: 0 0 10px 0;
+	border: none;
+	background:#EFF3F8;
+	padding: 10px;
+}
+/*div.flexigrid div.fbutton:hover {
+	background: #C9D6E5;
+	border: #EFF3F8;
+}*/
+div.flexigrid div.btnseparator {
+	display: none;
+}
+div.flexigrid a {
+	color: #444 !important;
+	text-shadow:0 1px 0 #FFF;
+}
+div.flexigrid div.pDiv {
+	background: #EFF3F8;
+	padding: 10px;
+	border: none;
+}
+div.flexigrid table tr.hDiv,
+div.flexigrid div.mDiv {
+	background: linear-gradient(to bottom, #F8F8F8 0px, #ECECEC 100%) repeat-x scroll 0 0 #F2F2F2;
+}
+div.flexigrid div.mDiv {
+	border-top: 1px solid #CCC;
+	padding: 5px;
+	background: #EFF3F8;
+}
+div.flexigrid table tr.hDiv th:first-child {
+	border-left: 1px solid #ccc;
+}
+div.flexigrid table tr.hDiv th:last-child div {
+	border-right: 1px solid #ccc;
+}
+div.flexigrid table tr.hDiv th div {
+	padding: 10px 5px;
+}
+div.flexigrid div.form-div input[type="text"], 
+div.flexigrid div.form-div input[type="password"] {
+	height: auto;
+}
+div.flexigrid div.bDiv {
+	border: none;
+}
+div.flexigrid div.bDiv td div {
+	padding: 10px 5px;
+}
+div.flexigrid div.pDiv2 select {
+	padding: 2px;
+	width: auto;
+	height: auto;
+}
+div.flexigrid div.pDiv2 input {
+	padding: 2px;
+	width: auto;
+	height: auto;
+}
+
+div.flexigrid .bDiv table tr td {
+	border-bottom: 1px solid #ccc;
+}
+div.flexigrid .bDiv table tr td:first-child {
+	border-left: 1px solid #ccc;
+}
+div.flexigrid tr.erow td {
+	background: #eaeaea;
+}
+div.flexigrid .gridImagePrev,
+div.flexigrid .editImagePrev {
+	max-width: 200px;
+	max-height: 200px;
+}
+.report-div.success {
+	background: #DFF0D8;
+	border-radius: 4px;
+	color: #468847;
+}
+div.form-field-box.even {
+	background: #F5F5F5;
+}
+div.flexigrid div.pDiv div.pButton:hover, 
+div.flexigrid div.pDiv div.pButton.pBtnOver {
+	width: auto;
+	height: auto;
+}
+div.flexigrid div.pDiv div.pButton:hover span, 
+div.flexigrid div.pDiv div.pButton.pBtnOver span {
+	width: 20px;
+	height: 20px;
+}
+div.flexigrid select option, 
+div.flexigrid select.form-control option {
+	padding: 0;
+	border-right: 1px solid #D5D5D5;
+}
+div.flexigrid div.sDiv {
+	border: none;
+}

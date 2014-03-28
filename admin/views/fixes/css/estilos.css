@@ -1,0 +1,9 @@
+@import url("gcrud.css");
+
+/* FIXES PARA EL TEMA ACE */
+.sidebar.menu-min h5 {
+	font-size: 12px;
+}
+.nav-list > li .submenu > li a > [class*="icon-"]:first-child {
+	display: block;
+}

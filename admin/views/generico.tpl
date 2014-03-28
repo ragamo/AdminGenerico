@@ -1,10 +1,15 @@
-<div class="header clearfix">
-	<div class="container">
-		<h1>{$titulo}</h1>
-		{if $subtitulo}<p>{$subtitulo}</p>{/if}
-	</div>
-</div>
+<div class="page-header">
+	<h1>
+		{$titulo}
+		{if $subtitulo}
+		<small>
+			<i class="icon-double-angle-right"></i>
+			{$subtitulo}
+		</small>
+		{/if}
+	</h1>
+</div><!-- /.page-header -->
 
-<div class="container">
+<div class="">
 {$grid}
 </div>
