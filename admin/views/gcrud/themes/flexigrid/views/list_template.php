@@ -36,9 +36,12 @@
 
 </script>
 <div id='list-report-error' class='report-div error'></div>
-<div id='list-report-success' class='report-div success report-list' <?php if($success_message !== null){?>style="display:block"<?php }?>><?php
+<div id='list-report-success' class='report-div alert alert-block alert-success' <?php if($success_message !== null){?>style="display:block"<?php }?>><?php
 if($success_message !== null){?>
-	<p><?php echo $success_message; ?></p>
+	<button type="button" class="close" data-dismiss="alert">
+		<i class="icon-remove"></i>
+	</button>
+	<p><i class="icon-ok green"></i> <?php echo $success_message; ?></p>
 <?php }
 ?></div>
 <div class="flexigrid" style='width: 100%;' data-unique-hash="<?php echo $unique_hash; ?>">

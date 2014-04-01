@@ -15,10 +15,6 @@ div.flexigrid div.tDiv {
 	background:#EFF3F8;
 	padding: 10px;
 }
-/*div.flexigrid div.fbutton:hover {
-	background: #C9D6E5;
-	border: #EFF3F8;
-}*/
 div.flexigrid div.btnseparator {
 	display: none;
 }
@@ -69,7 +65,6 @@ div.flexigrid div.pDiv2 input {
 	width: auto;
 	height: auto;
 }
-
 div.flexigrid .bDiv table tr td {
 	border-bottom: 1px solid #ccc;
 }
@@ -109,4 +104,22 @@ div.flexigrid select.form-control option {
 }
 div.flexigrid div.sDiv {
 	border: none;
+}
+#crudForm div.pDiv {
+	padding-left: 0;
+}
+div.flexigrid div.form-button-box {
+	margin-right: 10px;
+	margin-left: 0;
+}
+.btn {
+	border-radius: 0 !important;
+}
+div.chzn-container .chzn-drop,
+div.chzn-container .chzn-drop:before,
+div.chzn-container .chzn-drop:after {
+	-moz-box-sizing:content-box !important;
+}
+div.report-div {
+	padding: 15px;
 }
