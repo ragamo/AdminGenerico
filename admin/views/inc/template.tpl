@@ -8,13 +8,13 @@
 
 	<link rel="stylesheet" href="{$FULL_PATH}/assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="{$FULL_PATH}/assets/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="{$FULL_PATH}/assets/css/ace-fonts.css" />
-	<link rel="stylesheet" href="{$FULL_PATH}/assets/css/ace.min.css" />
-	<link rel="stylesheet" href="{$FULL_PATH}/assets/css/ace-skins.min.css" />
 	<link rel="stylesheet" href="{$FULL_PATH}/fixes/css/estilos.css" />
 	{foreach $css as $c}
 	<link href="{$c}" rel="stylesheet">
 	{/foreach}
+	<link rel="stylesheet" href="{$FULL_PATH}/assets/css/ace-fonts.css" />
+	<link rel="stylesheet" href="{$FULL_PATH}/assets/css/ace.min.css" />
+	<link rel="stylesheet" href="{$FULL_PATH}/assets/css/ace-skins.min.css" />
 
 	<script src="{$FULL_PATH}/assets/js/jquery-1.10.2.min.js"></script>
 	<script src="{$FULL_PATH}/assets/js/ace-extra.min.js"></script>
