@@ -40,7 +40,7 @@
 			<div class="navbar-header pull-left">
 				<a href="#" class="navbar-brand">
 					<small>
-						<i class="icon-th-large"></i>
+						<i class="icon-desktop"></i>
 						Admin
 					</small>
 				</a><!-- /.brand -->
@@ -61,15 +61,15 @@
 						</a>
 
 						<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+							{*
 							<li>
 								<a href="#">
 									<i class="icon-cog"></i>
 									Settings
 								</a>
 							</li>
-
 							<li class="divider"></li>
-
+							*}
 							<li>
 								<a href="{$BASE_URL}/login/logout/">
 									<i class="icon-off"></i>

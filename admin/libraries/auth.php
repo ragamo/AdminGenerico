@@ -16,7 +16,8 @@ class Auth {
 		$CI->load->model('login_model');
 		$userModules = $CI->login_model->getModulosPorUsuario($CI->session->userdata('id'));
 		if(!in_array($CI->router->fetch_class(), $userModules)) {
-			$data['grid'] = '<h1>Acceso restringido.</h1><p>No posees los permisos necesarios para ver este módulo.</p>';
+			$data['titulo'] = '<i class="icon-ban-circle"></i> Acceso restringido.';
+			$data['grid'] = '<p class="lead">No posees los permisos necesarios para ver este módulo.</p>';
 			echo $CI->smarty->render('generico.tpl', $data, true);
 			exit;
 		}
