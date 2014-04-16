@@ -40,8 +40,7 @@ class CI_Smarty extends Smarty {
         // Add all helpers to plugins_dir
         $helpers = glob(APPPATH . 'helpers/', GLOB_ONLYDIR | GLOB_MARK);
 
-        foreach ($helpers as $helper)
-        {
+        foreach ($helpers as $helper) {
             $this->plugins_dir[] = $helper;
         }
         
