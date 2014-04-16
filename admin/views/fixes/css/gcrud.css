@@ -123,3 +123,6 @@ div.chzn-container .chzn-drop:after {
 div.report-div {
 	padding: 15px;
 }
+div.chosen-search input {
+	width: 100% !important;
+}
