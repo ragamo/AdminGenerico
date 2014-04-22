@@ -91,7 +91,7 @@
 			</a>
 
 			<div class="sidebar" id="sidebar">
-				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+				<div class="sidebar-shortcuts clearfix" id="sidebar-shortcuts">
 					<h5>Menu</h5>
 				</div><!-- #sidebar-shortcuts -->
 
