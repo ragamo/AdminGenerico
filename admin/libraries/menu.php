@@ -2,6 +2,7 @@
 
 //Iconos:
 //http://getbootstrap.com/2.3.2/base-css.html#icons
+//http://fortawesome.github.io/Font-Awesome/3.2.1/icons/
 
 class Menu {
 
@@ -95,7 +96,7 @@ class Menu {
 			if(isset($item['controller']) && in_array($item['controller'], $permisos)) {
 				$output[$i] = $items[$i];
 
-				if(strstr($_SERVER["REQUEST_URI"], 'php/'.$item['controller'])) {
+				if(strstr($_SERVER["REQUEST_URI"], 'php/'.$item['controller'].'/')) {
 					$output[$i]['active'] = true;
 				}
 
@@ -105,7 +106,7 @@ class Menu {
 						$output[$i]['icono'] = $items[$i]['icono'];
 						$output[$i]['submenu'][$k] = $items[$i]['submenu'][$k];
 
-						if(strstr($_SERVER["REQUEST_URI"], 'php/'.$submenu['controller'])) {
+						if(strstr($_SERVER["REQUEST_URI"], 'php/'.$submenu['controller'].'/')) {
 							$output[$i]['submenu'][$k]['active'] = true;
 						}
 					}
