@@ -1,11 +1,12 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-define('BASE_URL', "http://".$_SERVER['SERVER_NAME']."/dev/lab/py/proyectos/admin.php");
-define('FULL_PATH', "http://".$_SERVER['SERVER_NAME']."/dev/lab/py/proyectos/admin/views");
+define('PROTOCOL', (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https" : "http");
+define('BASE_URL', PROTOCOL."://".$_SERVER['SERVER_NAME']."/proyectos/admin.php");
+define('FULL_PATH', PROTOCOL."://".$_SERVER['SERVER_NAME']."/proyectos/admin/views");
 
 //Opcional si se usa TinyMCE con uploader de imagenes
-define('TINYMCE_UPLOADS_PATH', $_SERVER['DOCUMENT_ROOT']."dev/lab/py/proyectos/application/uploads");
-define('TINYMCE_FULL_PATH', "http://".$_SERVER['SERVER_NAME']."/dev/lab/py/proyectos/application/uploads");
+define('TINYMCE_UPLOADS_PATH', $_SERVER['DOCUMENT_ROOT']."proyectos/application/uploads");
+define('TINYMCE_FULL_PATH', "http://".$_SERVER['SERVER_NAME']."/proyectos/application/uploads");
 
 
 /*
