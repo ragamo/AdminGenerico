@@ -28,8 +28,17 @@
 					<div class="col-sm-10 col-sm-offset-1">
 						<div class="login-container">
 
-							<div class="position-relative">
+							<div class="loginBox position-relative">
+	
+								{if $error}
+								<div class="alert alert-danger">
+									<span class="label label-danger">ERROR</span>
+									{$error}
+								</div>
+								{/if}
+
 								<div id="login-box" class="login-box visible widget-box no-border">
+
 									<div class="widget-body">
 										<div class="widget-main">
 
