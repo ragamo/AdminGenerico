@@ -24,5 +24,5 @@ Paquetes incluidos:
 - GroceryCRUD 1.4.1
 - ImageCRUD 0.5
 - jQuery 1.11.0
-- Bootstrap 2.3.2
-  - Bootstrap Datepicker
+- Bootstrap 3.0.0
+  - Ace Skin for Bootstrap

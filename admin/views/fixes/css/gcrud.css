@@ -126,3 +126,6 @@ div.report-div {
 div.chosen-search input {
 	width: 100% !important;
 }
+div.ui-datepicker {
+	width: 240px;
+}
