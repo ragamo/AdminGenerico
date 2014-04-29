@@ -23,25 +23,23 @@ class Login extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		
-		$query = $this->login_model->validar($username, $password);
+		$user = $this->login_model->validar($username, $password);
+		if(!$user) {
+			$this->index("Usuario y/o contraseña inválida.");
+			return;
+		}
 		
 		//Si el usuario es valido.
-		if($query) {
-			$data = array(
-				'id' => $query->usu_id,
-				'username' => $username,
-				'logeado' => 1
-			);
-			$this->session->set_userdata($data);
+		$data = array(
+			'id' => $user['id'],
+			'username' => $username,
+			'logeado' => 1
+		);
+		$this->session->set_userdata($data);
 
-			//Recupera el primer modulo habilitado para el usuario
-			$modulos = $this->login_model->getModulosPorUsuario($data['id']);
-			redirect(BASE_URL.'/'.$modulos[0]);
-			
-		//Usuario invalido. 
-		} else {
-			$this->index("Usuario y/o contraseña inválida.");
-		}
+		//Recupera el primer modulo habilitado para el usuario
+		$modulos = $this->login_model->getModulosPorUsuario($data['id']);
+		redirect(BASE_URL.'/'.$modulos[0]);
 	}	
 
 }
