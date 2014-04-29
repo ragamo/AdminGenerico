@@ -12,18 +12,6 @@ class Menu {
 				'icono' => 'icon-home',
 				'controller' => 'inicio'
 			),
-			'Proyectos' => array(
-				'icono' => 'icon-tag',
-				'controller' => 'proyectos'
-			),
-			'Modelos' => array(
-				'icono' => 'icon-tags',
-				'controller' => 'modelos'
-			),
-			'Cotizaciones' => array(
-				'icono' => 'icon-tasks',
-				'controller' => 'cotizaciones'
-			),
 			'Configuración' => array(
 				'icono' => 'icon-cog',
 				'submenu' => array(
@@ -31,22 +19,6 @@ class Menu {
 					'Usuarios' => array(
 						'icono' => 'icon-user',
 						'controller' => 'usuarios'
-					),
-					'Archivos' => array(
-						'icono' => 'icon-picture',
-						'controller' => 'media'
-					),
-					'Comunas' => array(
-						'icono' => 'icon-map-marker',
-						'controller' => 'comunas'
-					),
-					'Provincias' => array(
-						'icono' => 'icon-map-marker',
-						'controller' => 'provincias'
-					),
-					'Regiones' => array(
-						'icono' => 'icon-map-marker',
-						'controller' => 'regiones'
 					)
 				)
 			)

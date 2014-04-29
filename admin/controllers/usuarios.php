@@ -16,6 +16,12 @@ class Usuarios extends CI_Controller {
 		//Campos a mostrar en la grilla
 		$this->crud->columns('usu_id','usu_user','usu_permisos');
 
+		//Campos a mostrar en el formulario de adicion
+		$this->crud->add_fields('usu_user','usu_pass','usu_activo','usu_permisos');
+
+		//Campos a mostrar en el formulario de edicion (/*v*/: virtual)
+		$this->crud->edit_fields('usu_id','usu_user','usu_pass','usu_activo','usu_permisos');
+
 		//Mapeo de filas y nombres
 		$this->crud->display_as('usu_id','ID')
 					->display_as('usu_user','Usuario')
@@ -45,7 +51,7 @@ class Usuarios extends CI_Controller {
 		$data['css'] = $output->css_files;
 		$data['js'] = $output->js_files;
 
-		$data['titulo'] = "Usuarios";
+		$data['titulo'] = __CLASS__;
 		$this->smarty->render('generico.tpl', $data);
 	}
 
