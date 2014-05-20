@@ -15,6 +15,9 @@ require_once BASEPATH.'libraries/Smarty-3.0.8/libs/Smarty.class.php';
 
 class CI_Smarty extends Smarty {
 
+    /**
+     * Constructor
+     */
     public function __construct() {
         parent::__construct();
 
@@ -53,7 +56,15 @@ class CI_Smarty extends Smarty {
         $this->assign("this", $CI);
     }
     
-    
+    /**
+     * view
+     * Imprime o retorna una plantilla procesada.
+     * 
+     * @param  string  $template nombre o ruta de la plantilla a utilizar
+     * @param  array   $data     cada "key" del arreglo se convierte en una variable del mismo nombre que key para ser utilizada en la vista
+     * @param  boolean $return   si es true, retorna la plantilla procesada para ser asignada a una variable.
+     * @return html
+     */
     public function view($template, $data = array(), $return = FALSE){
         $data['BASE_URL']  = BASE_URL;
         $data['FULL_PATH'] = FULL_PATH;
@@ -73,6 +84,16 @@ class CI_Smarty extends Smarty {
         }
     }
 
+    /**
+     * render
+     * Preprocesa la plantilla incluyendola ademas dentro de /inc/template.tpl
+     * Su funcionamiento es igual a view
+     * 
+     * @param  string  $template nombre o ruta de la plantilla a utilizar
+     * @param  array   $data     cada "key" del arreglo se convierte en una variable del mismo nombre que key para ser utilizada en la vista
+     * @param  boolean $return   si es true, retorna la plantilla procesada para ser asignada a una variable.
+     * @return html
+     */
     public function render($template, $data = array(), $return = FALSE) {
         $x['CONTENIDO'] = $this->view($template, $data, TRUE);
         return $this->view("inc/template.tpl", $x, $return);
