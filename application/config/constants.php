@@ -1,7 +1,8 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-define('BASE_URL', "http://".$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']);
-define('FULL_PATH', "http://".$_SERVER['SERVER_NAME']."/application/views");
+define('PROTOCOL', (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https" : "http");
+define('BASE_URL', PROTOCOL."://".$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']);
+define('FULL_PATH', PROTOCOL."://".$_SERVER['SERVER_NAME']."/application/views");
 define('FB_API_KEY', "");
 
 /*
