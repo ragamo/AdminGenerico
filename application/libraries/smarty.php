@@ -10,7 +10,6 @@
 * @link http://ilikekillnerds.com
 */
 
-
 //require_once APPPATH."third_party/Smarty-3.0.8/libs/Smarty.class.php";
 require_once BASEPATH.'libraries/Smarty-3.0.8/libs/Smarty.class.php';
 
@@ -21,7 +20,6 @@ class CI_Smarty extends Smarty {
 
         // Store the Codeigniter super global instance... whatever
         $CI = get_instance();
-
         $CI->load->config('smarty');
 
         $this->template_dir      = config_item('template_directory');
@@ -39,9 +37,16 @@ class CI_Smarty extends Smarty {
 
         // Add all helpers to plugins_dir
         $helpers = glob(APPPATH . 'helpers/', GLOB_ONLYDIR | GLOB_MARK);
-
         foreach ($helpers as $helper) {
             $this->plugins_dir[] = $helper;
+        }
+
+        // Modular Separation / Modular Extensions has been detected
+        if(method_exists($CI->router, 'fetch_module')) {
+            $this->_module = $CI->router->fetch_module();
+            //add the current module view folder as a template directory
+            if ($this->_module !== '')
+                $this->addTemplateDir(APPPATH."modules/".$this->_module.'/views');
         }
         
         // Should let us access Codeigniter stuff in views
