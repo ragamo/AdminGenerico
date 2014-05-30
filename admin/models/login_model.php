@@ -21,6 +21,8 @@ class Login_model extends CI_Model {
 	}
 
 	public function getModulosPorUsuario($idUsuario) {
+		if(!$idUsuario) return false;
+		
 		$sql = "SELECT usu_permisos 
 				FROM usuarios 
 				WHERE usu_id = {$this->db->escape($idUsuario)}";
