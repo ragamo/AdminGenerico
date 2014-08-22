@@ -7,10 +7,12 @@ Paquetes incluidos:
   - FacebookApi
   - Bitly
   - UF Sii
+- Modular Extensions - HMVC
 - Smarty 3.0.8
 - Modernizr 2.6.3
 - jQuery 1.11.0
 - Fancybox 2.1.5
+
 
 
 Admin Genérico

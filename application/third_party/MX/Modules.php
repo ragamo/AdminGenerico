@@ -87,6 +87,8 @@ class Modules
 		/* create or return an existing controller from the registry */
 		if ( ! isset(self::$registry[$alias])) {
 			
+			$tempModule = CI::$APP->router->fetch_module(); //FIX
+
 			/* find the controller */
 			list($class) = CI::$APP->router->locate(explode('/', $module));
 	
@@ -103,6 +105,8 @@ class Modules
 			/* create and register the new controller */
 			$controller = ucfirst($class);	
 			self::$registry[$alias] = new $controller($params);
+
+			CI::$APP->router->set_module($tempModule); //FIX
 		}
 		
 		return self::$registry[$alias];
