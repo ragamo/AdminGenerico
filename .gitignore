@@ -1,3 +1,8 @@
+admin/cache/smarty/compiled/
+admin/config/autoload.php
+admin/config/database.php
+application/cache/smarty/compiled/
+
 #################
 ## Eclipse
 #################
