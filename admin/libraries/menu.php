@@ -9,17 +9,17 @@ class Menu {
 
 	private function items() {
 		return array(
-			'Inicio' => array(
+			'Home' => array(
 				'icono' => 'icon-home',
-				'controller' => 'inicio'
+				'controller' => 'home'
 			),
-			'Configuración' => array(
+			'Config' => array(
 				'icono' => 'icon-cog',
 				'submenu' => array(
 
-					'Usuarios' => array(
+					'Administrators' => array(
 						'icono' => 'icon-user',
-						'controller' => 'usuarios'
+						'controller' => 'administrators'
 					)
 				)
 			)
@@ -34,7 +34,7 @@ class Menu {
 	 * 
 	 * @return
 	 */
-	public function getModulos() {
+	public function getModules() {
 		$output = array();
 		$items = $this->items();
 
@@ -61,7 +61,7 @@ class Menu {
 	public function getItems() {
 		$CI =& get_instance();
 		$CI->load->model('login_model');
-		$permisos = $CI->login_model->getModulosPorUsuario($CI->session->userdata('id'));
+		$permisos = $CI->login_model->getModulesByUser($CI->session->userdata('id'));
 
 		$output = array();
 		$items = $this->items();

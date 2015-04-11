@@ -1,6 +1,6 @@
 <div class="page-header">
 	<h1>
-		Inicio
+		Home
 		<small>
 			<i class="icon-double-angle-right"></i>
 			Dashboard

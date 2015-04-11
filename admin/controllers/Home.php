@@ -5,11 +5,11 @@ class Home extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->auth->verificaLogin();
+		$this->auth->verifyLogin();
 	}
 
 	public function index() {
-		$this->smarty->render('inicio.tpl');
+		$this->smarty->render('home.tpl');
 	}
 
 }

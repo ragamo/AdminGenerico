@@ -5,38 +5,38 @@ class Administrators extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->auth->verificaLogin();
+		$this->auth->verifyLogin();
 	}
 
 	public function index() {
 		$this->load->library('grocery_CRUD','','crud');
 
 		//Selecciona la tabla base
-		$this->crud->set_table('usuarios')->set_subject('usuario');
+		$this->crud->set_table('administrators')->set_subject('admin');
 
 		//Campos a mostrar en la grilla
-		$this->crud->columns('usu_id','usu_user','usu_permisos');
+		$this->crud->columns('adm_id','adm_user','adm_active','adm_permissions');
 
 		//Campos a mostrar en el formulario de adicion
-		$this->crud->add_fields('usu_user','usu_pass','usu_activo','usu_permisos');
+		$this->crud->add_fields('adm_user','adm_pass','adm_active','adm_permissions');
 
 		//Campos a mostrar en el formulario de edicion (/*v*/: virtual)
-		$this->crud->edit_fields('usu_id','usu_user','usu_pass','usu_activo','usu_permisos');
+		$this->crud->edit_fields('adm_id','adm_user','adm_pass','adm_active','adm_permissions');
 
 		//Mapeo de filas y nombres
-		$this->crud->display_as('usu_id','ID')
-					->display_as('usu_user','Usuario')
-					->display_as('usu_pass','Contraseña')
-					->display_as('usu_activo','Estado')
-					->display_as('usu_permisos','Permisos');
+		$this->crud->display_as('adm_id','ID')
+					->display_as('adm_user','User')
+					->display_as('adm_pass','Password')
+					->display_as('adm_active','Status')
+					->display_as('adm_permissions','Permissions');
 
 		//Tipo de campos
-		$this->crud->field_type('usu_activo','dropdown', array('0' => 'Inactivo', '1' => 'Activo'))
-					->field_type('usu_id','readonly')
-					->field_type('usu_pass','password');
+		$this->crud->field_type('adm_active','dropdown', array('0' => 'Inactive', '1' => 'Active'))
+					->field_type('adm_id','readonly')
+					->field_type('adm_pass','password');
 
 		//Requeridos
-		$this->crud->required_fields('usu_user','usu_pass','usu_activo','usu_permisos');
+		$this->crud->required_fields('adm_user','adm_pass','adm_active','adm_permissions');
 
 		//Callbacks
 		$this->crud->callback_before_insert(array($this,'encryptPasswordCallback'));
@@ -44,7 +44,7 @@ class Administrators extends CI_Controller {
 
 		//Permisos
 		$this->load->library('menu');
-		$this->crud->field_type('usu_permisos','multiselect', $this->menu->getModulos());
+		$this->crud->field_type('adm_permissions','multiselect', $this->menu->getModules());
 
 		//Output
 		$output = $this->crud->render();
@@ -52,14 +52,14 @@ class Administrators extends CI_Controller {
 		$data['css'] = $output->css_files;
 		$data['js'] = $output->js_files;
 
-		$data['titulo'] = __CLASS__;
-		$this->smarty->render('generico.tpl', $data);
+		$data['title'] = __CLASS__;
+		$this->smarty->render('generic.tpl', $data);
 	}
 
 	public function encryptPasswordCallback($formData, $id = NULL) {
 		//Si ya es MD5 no hace nada
-		if(!preg_match('/^[a-f0-9]{32}$/', $formData['usu_pass'])) {
-			$formData['usu_pass'] = md5($formData['usu_pass']);
+		if(!preg_match('/^[a-f0-9]{40}$/', $formData['adm_pass'])) {
+			$formData['adm_pass'] = sha1($formData['adm_pass']);
 		}
 		return $formData;
 	}

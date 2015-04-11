@@ -1,10 +1,10 @@
 <div class="page-header">
 	<h1>
-		{$titulo}
-		{if $subtitulo}
+		{$title}
+		{if $subtitle}
 		<small>
 			<i class="icon-double-angle-right"></i>
-			{$subtitulo}
+			{$subtitle}
 		</small>
 		{/if}
 	</h1>

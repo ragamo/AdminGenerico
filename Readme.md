@@ -23,7 +23,7 @@ Paquetes incluidos:
 - CodeIgniter 3.0.0
   - Excel
 - Smarty 3.0.8
-- GroceryCRUD 1.4.1
+- GroceryCRUD 1.5.0
 - ImageCRUD 0.5
 - jQuery 1.11.0
 - Bootstrap 3.0.0

@@ -48,7 +48,7 @@
 
 											<div class="space-6"></div>
 
-											<form action="{$BASE_URL}/login/validar/" class="form-signin clearfix" method="post">
+											<form action="{$BASE_URL}/login/validate/" class="form-signin clearfix" method="post">
 												<fieldset>
 
 													<div class="clearfix">

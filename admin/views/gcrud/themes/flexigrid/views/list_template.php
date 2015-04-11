@@ -110,10 +110,10 @@ if($success_message !== null){?>
 				<option value="<?php echo $column->field_name?>"><?php echo $column->display_as?>&nbsp;&nbsp;</option>
 				<?php }?>
 			</select>
-            <input type="button" value="<?php echo $this->l('list_search');?>" class="btn crud_search" id='crud_search'>
+            <input type="button" value="<?php echo $this->l('list_search');?>" class="btn btn-xs crud_search" id='crud_search'>
 		</div>
         <div class='search-div-clear-button'>
-        	<input type="button" value="<?php echo $this->l('list_clear_filtering');?>" id='search_clear' class="btn search_clear">
+        	<input type="button" value="<?php echo $this->l('list_clear_filtering');?>" id='search_clear' class="btn btn-xs search_clear">
         </div>
 	</div>
 	<div class="pDiv">

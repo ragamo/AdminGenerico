@@ -1,6 +1,4 @@
-<?php 
-if (!defined('BASEPATH')) exit('No direct script access allowed');
-
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 /*
  * Image_Moo library
  *
@@ -62,7 +60,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
  * TO DO
  *
  * THANKS
- * MatjaÅ¾ for poiting out the save_pa bug (should of tested it!)
+ * Matjaž for poiting out the save_pa bug (should of tested it!)
  * Cahva for posting yet another bug in the save_pa (Man I can be silly sometimes!)
  * Cole spotting the resize flaw and providing a fix
  *
