@@ -1,4 +1,6 @@
 <?php
+if (!defined('BASEPATH')) exit('No direct script access allowed');
+
 /**
  * PHP grocery CRUD
  *
@@ -27,7 +29,7 @@
  * @version    	1.2
  * @link		http://www.grocerycrud.com/documentation
  */
-class grocery_CRUD_Model  extends CI_Model  {
+class Grocery_CRUD_Model  extends CI_Model  {
 
 	protected $primary_key = null;
 	protected $table_name = null;

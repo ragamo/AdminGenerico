@@ -1,4 +1,5 @@
 <?php
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 //Iconos:
 //http://getbootstrap.com/2.3.2/base-css.html#icons

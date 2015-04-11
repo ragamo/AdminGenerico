@@ -13,7 +13,7 @@
 //require_once APPPATH."third_party/Smarty-3.0.8/libs/Smarty.class.php";
 require_once BASEPATH.'libraries/Smarty-3.0.8/libs/Smarty.class.php';
 
-class CI_Smarty extends Smarty {
+class Smarty extends BaseSmarty {
 
     /**
      * Constructor

@@ -3,7 +3,7 @@ App Genérica
 
 Paquetes incluidos:
 
-- CodeIgniter 2.1.3
+- CodeIgniter 3.0.0
   - FacebookApi
   - Bitly
   - UF Sii
@@ -20,7 +20,7 @@ Admin Genérico
 
 Paquetes incluidos:
 
-- CodeIgniter 2.1.3
+- CodeIgniter 3.0.0
   - Excel
 - Smarty 3.0.8
 - GroceryCRUD 1.4.1

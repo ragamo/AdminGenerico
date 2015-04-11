@@ -28,5 +28,4 @@ $config['config_directory']     = APPPATH."third_party/Smarty/configs";
 $config['template_ext']         = 'tpl';
 
 // PHP error reporting level (can be any valid error reporting level)
-$config['error_reporting'] 		= "E_ALL";
-
+$config['error_reporting'] = "E_ALL";

@@ -82,7 +82,7 @@ if (SMARTY_SPL_AUTOLOAD && set_include_path(get_include_path() . PATH_SEPARATOR 
 /**
  * This is the main Smarty class
  */
-class Smarty extends Smarty_Internal_Data {
+class BaseSmarty extends Smarty_Internal_Data {
 	/**
 	* constant definitions
 	*/
