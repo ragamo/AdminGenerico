@@ -1,7 +1,7 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-//Iconos:
+//Icons:
 //http://getbootstrap.com/2.3.2/base-css.html#icons
 //http://fortawesome.github.io/Font-Awesome/3.2.1/icons/
 
@@ -10,15 +10,15 @@ class Menu {
 	private function items() {
 		return array(
 			'Home' => array(
-				'icono' => 'icon-home',
+				'icon' => 'icon-home',
 				'controller' => 'home'
 			),
 			'Config' => array(
-				'icono' => 'icon-cog',
+				'icon' => 'icon-cog',
 				'submenu' => array(
 
 					'Administrators' => array(
-						'icono' => 'icon-user',
+						'icon' => 'icon-user',
 						'controller' => 'administrators'
 					)
 				)
@@ -76,7 +76,7 @@ class Menu {
 			} elseif(isset($item['submenu'])) {
 				foreach($item['submenu'] as $k => $submenu) {
 					if(in_array($submenu['controller'],$permisos)) {
-						$output[$i]['icono'] = $items[$i]['icono'];
+						$output[$i]['icon'] = $items[$i]['icon'];
 						$output[$i]['submenu'][$k] = $items[$i]['submenu'][$k];
 
 						if(strstr($_SERVER["REQUEST_URI"], 'php/'.$submenu['controller'].'/')) {

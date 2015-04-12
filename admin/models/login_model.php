@@ -10,7 +10,7 @@ class Login_model extends CI_Model {
 		$sql = "SELECT adm_id AS id
 				FROM administrators 
 				WHERE adm_user = {$this->db->escape($username)} 
-				AND adm_pass = {$this->db->escape(md5($password))}
+				AND adm_pass = {$this->db->escape(sha1($password))}
 				AND adm_active = 1";
 
 		$query = $this->db->query($sql);

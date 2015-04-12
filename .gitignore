@@ -1,6 +1,7 @@
 admin/cache/smarty/compiled/
 admin/config/autoload.php
 admin/config/database.php
+admin/views/gcrud_1.4.1/
 application/cache/smarty/compiled/
 
 #################

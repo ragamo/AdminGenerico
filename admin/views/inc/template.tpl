@@ -100,7 +100,7 @@
 						{if $item.controller}
 						<li {if $item.active}class="active"{/if}>
 							<a href="{$BASE_URL}/{$item.controller}/">
-								<i class="{$item.icono}"></i>
+								<i class="{$item.icon}"></i>
 								<span class="menu-text"> {$i} </span>
 							</a>
 						</li>
@@ -108,7 +108,7 @@
 						{elseif $item.submenu}
 						<li class="{foreach $item.submenu as $submenu}{if $submenu.active}active open{/if}{/foreach}">
 							<a href="#" class="dropdown-toggle">
-								<i class="{$item.icono}"></i>
+								<i class="{$item.icon}"></i>
 								<span class="menu-text"> {$i} </span>
 								<b class="arrow icon-angle-down"></b>
 							</a>
@@ -116,7 +116,7 @@
 								{foreach $item.submenu as $k => $submenu}
 								<li {if $submenu.active}class="active"{/if}>
 									<a href="{$BASE_URL}/{$submenu.controller}/">
-										<i class="{$submenu.icono}"></i> {$k}
+										<i class="{$submenu.icon}"></i> {$k}
 									</a>
 								</li>
 								{/foreach}

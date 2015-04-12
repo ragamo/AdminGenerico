@@ -2413,7 +2413,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 		$selected_values 	= !empty($value) ? explode(",",$value) : array();
 
 		$select_title = str_replace('{field_display_as}',$field_info->display_as,$this->l('set_relation_title'));
-		$input = "<select id='field-{$field_info->name}' name='{$field_info->name}[]' multiple='multiple' size='8' class='chosen-multiple-select' data-placeholder='$select_title' style='width:510px;' >";
+		$input = "<select id='field-{$field_info->name}' name='{$field_info->name}[]' multiple='multiple' size='8' class='chosen-multiple-select tag-input-style' data-placeholder='$select_title' style='width:510px;' >";
 
 		foreach($options_array as $option)
 		{
@@ -2660,7 +2660,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 		$input .= "<div id='uploader_$unique' rel='$unique' class='grocery-crud-uploader' style='$uploader_display_none'></div>";
 		$input .= "<div id='success_$unique' class='upload-success-url' style='$file_display_none padding-top:7px;'>";
 		$input .= "<a href='".$file_url."' id='file_$unique' class='open-file";
-		$input .= $is_image ? " $image_class'><img src='".$file_url."' height='50px'>" : "' target='_blank'>$value";
+		$input .= $is_image ? " $image_class'><img src='".$file_url."' height='50' class='editImagePrev'>" : "' target='_blank'>$value";
 		$input .= "</a> ";
 		$input .= "<a href='javascript:void(0)' id='delete_$unique' class='delete-anchor'>".$this->l('form_upload_delete')."</a> ";
 		$input .= "</div><div style='clear:both'></div>";
