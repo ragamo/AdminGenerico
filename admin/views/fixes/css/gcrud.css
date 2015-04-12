@@ -15,6 +15,13 @@ div.flexigrid div.tDiv {
 	background:#EFF3F8;
 	padding: 10px;
 }
+div.flexigrid div.sDiv {
+	margin: 10px 0;
+	padding: 5px 10px;
+}
+div.flexigrid div.form-div {
+	font-size: 13px;
+}
 div.flexigrid div.btnseparator {
 	display: none;
 }
