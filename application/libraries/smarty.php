@@ -14,6 +14,7 @@
 require_once BASEPATH.'libraries/Smarty-3.0.8/libs/Smarty.class.php';
 
 class Smarty extends BaseSmarty {
+    protected $CI = null;
 
     /**
      * Constructor
@@ -22,8 +23,8 @@ class Smarty extends BaseSmarty {
         parent::__construct();
 
         // Store the Codeigniter super global instance... whatever
-        $CI = get_instance();
-        $CI->load->config('smarty');
+        $this->CI =& get_instance();
+        $this->CI->load->config('smarty');
 
         $this->template_dir      = config_item('template_directory');
         $this->compile_dir       = config_item('compile_directory');
@@ -45,15 +46,15 @@ class Smarty extends BaseSmarty {
         }
 
         // Modular Separation / Modular Extensions has been detected
-        if(method_exists($CI->router, 'fetch_module')) {
-            $this->_module = $CI->router->fetch_module();
+        if(method_exists($this->CI->router, 'fetch_module')) {
+            $this->_module = $this->CI->router->fetch_module();
             //add the current module view folder as a template directory
             if ($this->_module !== '')
                 $this->addTemplateDir(APPPATH."modules/".$this->_module.'/views');
         }
         
         // Should let us access Codeigniter stuff in views
-        $this->assign("this", $CI);
+        $this->assign("this", $this->CI);
     }
     
     /**
@@ -75,8 +76,7 @@ class Smarty extends BaseSmarty {
         }
         
         if ($return == FALSE){
-            $CI =& get_instance();
-            $CI->output->set_output($this->fetch($template));
+            $this->CI->output->set_output($this->fetch($template));
             return;
             
         } else {
@@ -95,8 +95,8 @@ class Smarty extends BaseSmarty {
      * @return html
      */
     public function render($template, $data = array(), $return = FALSE) {
-        $x['CONTENIDO'] = $this->view($template, $data, TRUE);
-        return $this->view("inc/template.tpl", $x, $return);
+        $data['CONTENIDO'] = $this->view($template, $data, TRUE);
+        return $this->view("inc/template.tpl", $data, $return);
     }
 
 }
