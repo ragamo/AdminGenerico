@@ -5,6 +5,9 @@
 
 				// Location of TinyMCE script
 				script_url : tinymce_path +"tiny_mce.js",
+
+				relative_urls: false,
+				remove_script_host: false,
 				
 				// General options
 				theme : "advanced",
