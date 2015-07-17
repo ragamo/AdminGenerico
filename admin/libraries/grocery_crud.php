@@ -2556,7 +2556,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 		}
 		else
 		{
-			$css_class = $has_priority_field || $is_ie_7 ? 'multiselect': 'chosen-multiple-select';
+			$css_class = $has_priority_field || $is_ie_7 ? 'multiselect': 'chosen-multiple-select tag-input-style';
 			$width_style = $has_priority_field || $is_ie_7 ? '' : 'width:510px;';
 
 			$select_title = str_replace('{field_display_as}',$field_info_type->display_as,$this->l('set_relation_title'));
