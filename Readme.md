@@ -33,7 +33,9 @@ Módulos y permisos
 ------------------
 
 Cada módulo debe registrarse en libraries/menu.php -> function items()
+
 La aplicación (admin) verificará si cada usuario posee los permisos indicados para leer el controller indicado.
+
 El sistema de permisos considera cada controller como un módulo independiente. 
 
 Por defecto, el SQL de instalación genera un nuevo usuario administrador:
@@ -41,6 +43,7 @@ Por defecto, el SQL de instalación genera un nuevo usuario administrador:
 - Pass: admin
 
 Además asigna permisos para leer los controllers "home" y "administrators".
+
 Cuando se agregan nuevos módulos (o controllers) deben ser asignados a través del administrador de usuarios para que aparezcan en el menú.
 
 
