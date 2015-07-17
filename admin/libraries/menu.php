@@ -30,7 +30,7 @@ class Menu {
 	 * getModulos
 	 * Retorna un arreglo de primer nivel para exponer
 	 * los modulos disponible para cada usuario como permiso.
-	 * Se utiliza en /usuarios
+	 * Se utiliza en /administrators
 	 * 
 	 * @return
 	 */
